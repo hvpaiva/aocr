@@ -1,0 +1,16 @@
+[workspace]
+members = ["aoc_core", "day_*", "macros"]
+default-members = ["day_*"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+anyhow = "1.0.92"
+predicates = "3.1.2"
+pretty_assertions = "1.4.1"
+aoc_core = { path = "aoc_core" }
+macros = { path = "macros" }
+ctor = "0.2.8"
