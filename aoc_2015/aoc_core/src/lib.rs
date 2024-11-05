@@ -11,21 +11,21 @@ pub enum Part {
     Two,
 }
 
-type SolutionFn = fn(&str) -> Result<u64>;
+type SolutionFn = fn(&str) -> Result<i64>;
 type FunctionRegistry = HashMap<String, SolutionFn>;
 
 lazy_static::lazy_static! {
     static ref FUNCTION_REGISTRY: Mutex<FunctionRegistry> = Mutex::new(HashMap::new());
 }
 
-pub fn register_function(part: &str, func: fn(&str) -> Result<u64>) {
+pub fn register_function(part: &str, func: fn(&str) -> Result<i64>) {
     FUNCTION_REGISTRY
         .lock()
         .unwrap()
         .insert(part.to_string(), func);
 }
 
-pub fn run_day(part: &str, input_path: &str) -> Result<u64> {
+pub fn run_day(part: &str, input_path: &str) -> Result<i64> {
     let input = std::fs::read_to_string(input_path).expect("Failed to read input file");
 
     let registry = FUNCTION_REGISTRY.lock().unwrap();
