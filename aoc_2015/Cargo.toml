@@ -14,3 +14,4 @@ pretty_assertions = "1.4.1"
 aoc_core = { path = "aoc_core" }
 macros = { path = "macros" }
 ctor = "0.2.8"
+rstest = "0.23.0"
