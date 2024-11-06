@@ -2,7 +2,7 @@ create day:
   #!/bin/bash
   cargo generate --path ./daily_template --name {{day}}
   cargo add -p {{day}} anyhow aoc_core ctor macros
-  cargo add -p {{day}} --dev predicates pretty_assertions
+  cargo add -p {{day}} --dev predicates pretty_assertions retest
   just get-input {{day}}
 
 run day part:
