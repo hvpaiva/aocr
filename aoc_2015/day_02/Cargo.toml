@@ -6,6 +6,7 @@ edition.workspace = true
 [dependencies]
 anyhow.workspace = true
 aoc_core.workspace = true
+criterion = { workspace = true, features = ["html_reports"] }
 ctor.workspace = true
 macros.workspace = true
 rstest.workspace = true
