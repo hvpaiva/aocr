@@ -1,18 +1,16 @@
-[workspace]
-members = ["aoc_core", "day_*", "macros"]
-default-members = ["day_*"]
-resolver = "2"
-
-[workspace.package]
+[package]
+name = "aoc_2015"
 version = "0.1.0"
 edition = "2021"
 
-[workspace.dependencies]
-anyhow = "1.0.92"
-predicates = "3.1.2"
+[dependencies]
+aoc-runner = "0.3.0"
+aoc-runner-derive = "0.3.0"
+derive_more = { version = "1.0.0", features = ["from", "display"] }
+itertools = "0.13.0"
+md5 = "0.7.0"
+nom = "7.1.3"
+once_cell = "1.20.2"
+predicates = "3.1.3"
 pretty_assertions = "1.4.1"
-aoc_core = { path = "aoc_core" }
-macros = { path = "macros" }
-ctor = "0.2.8"
 rstest = "0.23.0"
-criterion = "0.5"
