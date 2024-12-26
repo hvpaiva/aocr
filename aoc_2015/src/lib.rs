@@ -7,8 +7,12 @@ mod day4;
 mod day5;
 mod day6;
 mod day7;
+mod day8;
 
 pub mod input;
 pub mod set;
+
+// Only for doc testing, 'cause why not?
+pub use day8::Encode;
 
 aoc_lib! { year = 2015; }

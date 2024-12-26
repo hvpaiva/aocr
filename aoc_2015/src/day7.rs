@@ -93,9 +93,7 @@ fn parse_assign(input: &str) -> IResult<&str, Operation> {
 
 fn parse_operand(input: &str) -> IResult<&str, Operand> {
     alt((
-        // Tenta parsear como dígitos
         map_res(digit1, |s: &str| s.parse::<u16>().map(Operand::Value)),
-        // Se não der, tenta parsear como identificador (wire)
         map_res(alpha1, |s: &str| -> Result<Operand, ()> {
             Ok(Operand::Wire(s.to_string()))
         }),
@@ -185,8 +183,6 @@ fn solve_two(_input: &str) -> usize {
     14134
 }
 
-// I implemented this challenge before I actually started writing in Rust,
-// so I only tested the real solution.
 #[cfg(test)]
 mod tests {
     use pretty_assertions::assert_eq;
